@@ -1,0 +1,56 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: x64
+            msbuild_platform: x64
+            artifact_name: voidImageViewer-Release-x64
+            artifact_path: vs2019/x64/Release/voidImageViewer.exe
+          - platform: x86
+            msbuild_platform: Win32
+            artifact_name: voidImageViewer-Release-x86
+            artifact_path: vs2019/Release/voidImageViewer.exe
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+        with:
+          msbuild-architecture: x64
+
+      - name: Verify vendored libwebp sources
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "libwebp/src/webp/decode.h")) {
+            throw "libwebp sources are missing from the repository."
+          }
+          Write-Host "libwebp sources present (compiled inline with the application)."
+
+      - name: Build Release (${{ matrix.platform }})
+        shell: pwsh
+        run: |
+          msbuild vs2019/voidImageViewer.sln `
+            /p:Configuration=Release `
+            /p:Platform=${{ matrix.msbuild_platform }} `
+            /m `
+            /verbosity:minimal
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.artifact_path }}
+          if-no-files-found: error

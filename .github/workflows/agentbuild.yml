@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: continuemycoding/AgentBuild@v1.1.7
+      - uses: continuemycoding/AgentBuild@v1.1.8
         with:
           mode: auto
         env:

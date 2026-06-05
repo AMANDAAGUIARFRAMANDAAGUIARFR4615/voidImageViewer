@@ -6,7 +6,7 @@
       <PreprocessorDefinitions>VERSION_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>ComCtl32.lib;shlwapi.lib</AdditionalDependencies>
+      <AdditionalDependencies>ComCtl32.lib;shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
 </Project>

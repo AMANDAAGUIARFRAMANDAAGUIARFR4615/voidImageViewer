@@ -1,0 +1,50 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: x64
+            artifact_suffix: x64
+            exe_name: voidImageViewer.exe
+          - platform: ARM64
+            artifact_suffix: arm64
+            exe_name: voidImageViewerARM64.exe
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build Release (${{ matrix.platform }})
+        shell: pwsh
+        run: |
+          msbuild vs2026/voidImageViewer.sln `
+            /m `
+            /p:Configuration=Release `
+            /p:Platform=${{ matrix.platform }} `
+            /p:PlatformToolset=v143 `
+            /p:WindowsTargetPlatformVersion=10.0
+
+      - name: Upload voidImageViewer (${{ matrix.artifact_suffix }})
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer-Release-${{ matrix.artifact_suffix }}
+          path: vs2026/${{ matrix.platform }}/Release/${{ matrix.exe_name }}
+          if-no-files-found: error

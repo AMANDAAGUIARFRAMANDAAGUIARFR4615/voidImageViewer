@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+    GitHub Actions runners use a modern Windows SDK that no longer ships UnicoWS.lib.
+    Override Win32 link dependencies for standard Release/Debug builds used in CI.
+  -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Link>
+      <AdditionalDependencies>ComCtl32.lib;shlwapi.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Link>
+      <AdditionalDependencies>ComCtl32.lib;shlwapi.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

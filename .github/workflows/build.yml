@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Verify vendored dependencies
+        shell: pwsh
+        run: |
+          if (-not (Test-Path libwebp/src)) {
+            Write-Error "Vendored libwebp sources are missing."
+            exit 1
+          }
+          Write-Host "libwebp is vendored; no external package installation required."
+
+      - name: Build Release (Win32, x64, ARM64)
+        shell: cmd
+        run: |
+          msbuild vs2019\voidImageViewer.sln /m /p:Configuration=Release /p:Platform=Win32 /p:PlatformToolset=v143
+          msbuild vs2019\voidImageViewer.sln /m /p:Configuration=Release /p:Platform=x64 /p:PlatformToolset=v143
+          msbuild vs2019\voidImageViewer.sln /m /p:Configuration=Release /p:Platform=ARM64 /p:PlatformToolset=v143
+
+      - name: Upload voidImageViewer executables
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer
+          path: |
+            vs2019/Release/voidImageViewer.exe
+            vs2019/x64/Release/voidImageViewer.exe
+            vs2019/ARM64/Release/voidImageViewerARM64.exe
+          if-no-files-found: error

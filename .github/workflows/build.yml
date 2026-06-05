@@ -1,0 +1,62 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Create UnicoWS stub for Win32
+        shell: pwsh
+        run: |
+          $vsPath = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" `
+            -latest -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
+            -property installationPath
+          if (-not $vsPath) {
+            throw "Visual Studio installation with C++ tools was not found."
+          }
+          $vcvars = Join-Path $vsPath "VC\Auxiliary\Build\vcvars32.bat"
+          $cmds = @(
+            "if not exist ci-libs mkdir ci-libs",
+            "echo int __stdcall UnicoDummy(void) { return 0; } > unicows_stub.c",
+            "cl /nologo /c unicows_stub.c",
+            "lib /nologo /OUT:ci-libs\UnicoWS.lib unicows_stub.obj",
+            "del unicows_stub.c unicows_stub.obj"
+          ) -join " && "
+          cmd /c "`"$vcvars`" && $cmds"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Build Release (all platforms)
+        shell: pwsh
+        env:
+          LIB: ${{ github.workspace }}\ci-libs;${{ env.LIB }}
+        run: |
+          $platforms = @("Win32", "x64", "ARM", "ARM64")
+          $msbuildArgs = @(
+            "vs2019\voidImageViewer.sln",
+            "/p:Configuration=Release",
+            "/p:PlatformToolset=v143",
+            "/m",
+            "/verbosity:minimal"
+          )
+          foreach ($platform in $platforms) {
+            Write-Host "Building Release|$platform ..."
+            & msbuild @msbuildArgs "/p:Platform=$platform"
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer-Release
+          path: vs2019/**/voidImageViewer*.exe
+          if-no-files-found: error

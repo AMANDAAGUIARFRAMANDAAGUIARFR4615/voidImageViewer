@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/img2webp.dir/link.d CMakeFiles/img2webp.dir/examples/img2webp.c.o -o img2webp  libexampleutil.a libimagedec.a libimageioutil.a libwebp.a libwebpmux.a libwebpdemux.a libwebp.a libsharpyuv.a -lm

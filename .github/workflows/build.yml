@@ -1,0 +1,37 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [x64, Win32, ARM, ARM64]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build Release (${{ matrix.platform }})
+        shell: cmd
+        run: |
+          set MSBUILD_ARGS=/p:Configuration=Release /p:Platform=${{ matrix.platform }} /p:WindowsTargetPlatformVersion=10.0 /m /v:minimal
+          if /I "${{ matrix.platform }}"=="Win32" (
+            set MSBUILD_ARGS=%MSBUILD_ARGS% /p:ForceImportBeforeCppTargets=%GITHUB_WORKSPACE%\.github\build\Release.Win32.CI.props
+          )
+          msbuild vs2019\voidImageViewer.sln %MSBUILD_ARGS%
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer-Release-${{ matrix.platform }}
+          path: vs2019/**/voidImageViewer*.exe
+          if-no-files-found: error

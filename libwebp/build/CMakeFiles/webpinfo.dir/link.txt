@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/webpinfo.dir/link.d CMakeFiles/webpinfo.dir/examples/webpinfo.c.o -o webpinfo  libexampleutil.a libimageioutil.a libwebp.a libsharpyuv.a -lm

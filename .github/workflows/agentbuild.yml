@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  workflows: write
   actions: read
 
 jobs:
@@ -23,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: continuemycoding/AgentBuild@v1.1.4
+      - uses: continuemycoding/AgentBuild@v1.1.5
         with:
           mode: auto
         env:

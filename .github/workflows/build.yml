@@ -1,0 +1,73 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: x64
+            msvc_arch: x64
+            artifact_suffix: x64
+            exe_path: vs2019/x64/Release/voidImageViewer.exe
+          - platform: Win32
+            msvc_arch: x86
+            artifact_suffix: x86
+            exe_path: vs2019/Release/voidImageViewer.exe
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup MSVC toolchain
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.msvc_arch }}
+
+      - name: Build Release (${{ matrix.platform }})
+        run: >
+          msbuild vs2019/voidImageViewer.sln
+          /p:Configuration=Release
+          /p:Platform=${{ matrix.platform }}
+          /m
+          /verbosity:minimal
+
+      - name: Verify build output
+        shell: pwsh
+        run: |
+          $exe = "${{ matrix.exe_path }}"
+          if (-not (Test-Path $exe)) {
+            Write-Error "Expected executable not found: $exe"
+            Get-ChildItem -Path vs2019 -Recurse -Filter voidImageViewer.exe | ForEach-Object { $_.FullName }
+            exit 1
+          }
+          Write-Host "Built: $exe"
+
+      - name: Stage build artifacts
+        shell: pwsh
+        run: |
+          $staging = "$env:RUNNER_TEMP/artifacts"
+          New-Item -ItemType Directory -Force -Path $staging | Out-Null
+          Copy-Item -Path "${{ matrix.exe_path }}" -Destination $staging
+          $pdb = "${{ matrix.exe_path }}" -replace '\.exe$', '.pdb'
+          if (Test-Path $pdb) {
+            Copy-Item -Path $pdb -Destination $staging
+          }
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer-Release-${{ matrix.artifact_suffix }}
+          path: ${{ runner.temp }}/artifacts/*
+          if-no-files-found: error

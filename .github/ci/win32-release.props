@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- Win32 Release builds need VERSION_X86; drop UnicoWS.lib (not on CI runners). -->
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>VERSION_X86;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ComCtl32.lib;shlwapi.lib</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

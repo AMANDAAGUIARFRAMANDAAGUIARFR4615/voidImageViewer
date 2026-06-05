@@ -16,10 +16,10 @@ jobs:
         include:
           - platform: x64
             arch: x64
-            artifact_dir: vs2019/x64/Release
+            artifact_dir: vs2026/x64/Release
           - platform: Win32
             arch: x86
-            artifact_dir: vs2019/Release
+            artifact_dir: vs2026/Release
 
     steps:
       - name: Checkout repository
@@ -44,11 +44,16 @@ jobs:
       - name: Build voidImageViewer (Release | ${{ matrix.platform }})
         shell: pwsh
         run: |
-          msbuild vs2019/voidImageViewer.sln `
+          $extraProps = @()
+          if ("${{ matrix.platform }}" -eq "Win32") {
+            $extraProps += "/p:ForceImportAfterCppTargets=${{ github.workspace }}\.github\ci\win32-release.props"
+          }
+          msbuild vs2026/voidImageViewer.sln `
             /p:Configuration=Release `
             /p:Platform=${{ matrix.platform }} `
             /p:PlatformToolset=v143 `
             /p:WindowsTargetPlatformVersion=10.0 `
+            @extraProps `
             /m
 
       - name: Upload build artifacts

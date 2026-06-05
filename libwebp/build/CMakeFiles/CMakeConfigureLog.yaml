@@ -1,0 +1,1209 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      The system is: Linux - 6.17.0-1015-azure - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/3.31.6/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-IZfZgN"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-IZfZgN"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-IZfZgN'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d248a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d248a.dir/build.make CMakeFiles/cmTC_d248a.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-IZfZgN'
+        Building C object CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d248a.dir/'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_d248a.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccvZzmfy.s
+        GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)
+        	compiled by GNU C version 13.3.0, GMP version 6.3.0, MPFR version 4.2.1, MPC version 1.3.1, isl version isl-0.26-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/13/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Compiler executable checksum: b220a7f1a1f69970d969d254ad9ec166
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d248a.dir/'
+         as -v --64 -o CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o /tmp/ccvZzmfy.s
+        GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_d248a
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d248a.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-linux-gnu
+        Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++,m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr,amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d248a' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d248a.'
+         /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmvibwN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d248a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        collect2 version 13.3.0
+        /usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmvibwN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d248a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Ubuntu) 2.42
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d248a' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d248a.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o -o cmTC_d248a
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-IZfZgN'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/13/include] ==> [/usr/lib/gcc/x86_64-linux-gnu/13/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-linux-gnu/13/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-IZfZgN']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d248a/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_d248a.dir/build.make CMakeFiles/cmTC_d248a.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-IZfZgN']
+        ignore line: [Building C object CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o -c /usr/local/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d248a.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/cc1 -quiet -v -imultiarch x86_64-linux-gnu /usr/local/share/cmake-3.31/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_d248a.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -fasynchronous-unwind-tables -fstack-protector-strong -Wformat -Wformat-security -fstack-clash-protection -fcf-protection -o /tmp/ccvZzmfy.s]
+        ignore line: [GNU C17 (Ubuntu 13.3.0-6ubuntu2~24.04.1) version 13.3.0 (x86_64-linux-gnu)]
+        ignore line: [	compiled by GNU C version 13.3.0  GMP version 6.3.0  MPFR version 4.2.1  MPC version 1.3.1  isl version isl-0.26-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed/x86_64-linux-gnu"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/13/../../../../x86_64-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/13/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: b220a7f1a1f69970d969d254ad9ec166]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d248a.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o /tmp/ccvZzmfy.s]
+        ignore line: [GNU assembler version 2.42 (x86_64-linux-gnu) using BFD version (GNU Binutils for Ubuntu) 2.42]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_d248a]
+        ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d248a.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none:amdgcn-amdhsa]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-linux-gnu]
+        ignore line: [Configured with: ../src/configure -v --with-pkgversion='Ubuntu 13.3.0-6ubuntu2~24.04.1' --with-bugurl=file:///usr/share/doc/gcc-13/README.Bugs --enable-languages=c ada c++ go d fortran objc obj-c++ m2 --prefix=/usr --with-gcc-major-version-only --program-suffix=-13 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/libexec --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-libstdcxx-backtrace --enable-gnu-unique-object --disable-vtable-verify --enable-plugin --enable-default-pie --with-system-zlib --enable-libphobos-checking=release --with-target-system-zlib=auto --enable-objc-gc=auto --enable-multiarch --disable-werror --enable-cet --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32 m64 mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-nvptx/usr amdgcn-amdhsa=/build/gcc-13-EldibY/gcc-13-13.3.0/debian/tmp-gcn/usr --enable-offload-defaulted --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu --with-build-config=bootstrap-lto-lean --enable-link-serialization=2]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 13.3.0 (Ubuntu 13.3.0-6ubuntu2~24.04.1) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/13/:/usr/libexec/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/13/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/13/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d248a' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_d248a.']
+        link line: [ /usr/libexec/gcc/x86_64-linux-gnu/13/collect2 -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmvibwN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d248a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccmvibwN.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_d248a] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        ignore line: [collect2 version 13.3.0]
+        ignore line: [/usr/bin/ld -plugin /usr/libexec/gcc/x86_64-linux-gnu/13/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-linux-gnu/13/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmvibwN.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_d248a /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/13 -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/13/../../.. -v CMakeFiles/cmTC_d248a.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o] ==> [/usr/lib/x86_64-linux-gnu/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crti.o] ==> [/usr/lib/x86_64-linux-gnu/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/crtn.o] ==> [/usr/lib/x86_64-linux-gnu/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13] ==> [/usr/lib/gcc/x86_64-linux-gnu/13]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/13/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib/x86_64-linux-gnu/Scrt1.o;/usr/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/13/crtendS.o;/usr/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/13;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/local/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:19 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Ubuntu) 2.42
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/deps.cmake:13 (check_c_source_compiles)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_BSWAP16"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-3oA0jf"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-3oA0jf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_BUILTIN_BSWAP16"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-3oA0jf'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8879a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8879a.dir/build.make CMakeFiles/cmTC_8879a.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-3oA0jf'
+        Building C object CMakeFiles/cmTC_8879a.dir/src.c.o
+        /usr/bin/cc -DHAVE_BUILTIN_BSWAP16  -fPIE -o CMakeFiles/cmTC_8879a.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-3oA0jf/src.c
+        Linking C executable cmTC_8879a
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8879a.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_8879a.dir/src.c.o -o cmTC_8879a
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-3oA0jf'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/deps.cmake:21 (check_c_source_compiles)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_BSWAP32"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-V8eBHw"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-V8eBHw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_BUILTIN_BSWAP32"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-V8eBHw'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3ea91/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3ea91.dir/build.make CMakeFiles/cmTC_3ea91.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-V8eBHw'
+        Building C object CMakeFiles/cmTC_3ea91.dir/src.c.o
+        /usr/bin/cc -DHAVE_BUILTIN_BSWAP32  -fPIE -o CMakeFiles/cmTC_3ea91.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-V8eBHw/src.c
+        Linking C executable cmTC_3ea91
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ea91.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_3ea91.dir/src.c.o -o cmTC_3ea91
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-V8eBHw'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/deps.cmake:29 (check_c_source_compiles)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test HAVE_BUILTIN_BSWAP64"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-LmebUd"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-LmebUd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_BUILTIN_BSWAP64"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-LmebUd'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_3edc8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_3edc8.dir/build.make CMakeFiles/cmTC_3edc8.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-LmebUd'
+        Building C object CMakeFiles/cmTC_3edc8.dir/src.c.o
+        /usr/bin/cc -DHAVE_BUILTIN_BSWAP64  -fPIE -o CMakeFiles/cmTC_3edc8.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-LmebUd/src.c
+        Linking C executable cmTC_3edc8
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3edc8.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_3edc8.dir/src.c.o -o cmTC_3edc8
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-LmebUd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/usr/local/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/local/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "cmake/deps.cmake:40 (find_package)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oF3Vyv"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oF3Vyv"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oF3Vyv'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_bc15d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_bc15d.dir/build.make CMakeFiles/cmTC_bc15d.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oF3Vyv'
+        Building C object CMakeFiles/cmTC_bc15d.dir/src.c.o
+        /usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIE -o CMakeFiles/cmTC_bc15d.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oF3Vyv/src.c
+        Linking C executable cmTC_bc15d
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc15d.dir/link.txt --verbose=1
+        /usr/bin/cc CMakeFiles/cmTC_bc15d.dir/src.c.o -o cmTC_bc15d
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oF3Vyv'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/deps.cmake:60 (check_c_source_compiles)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test HAVE_MATH_LIBRARY"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0PWrtS"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0PWrtS"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_MATH_LIBRARY"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0PWrtS'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_6e54a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_6e54a.dir/build.make CMakeFiles/cmTC_6e54a.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0PWrtS'
+        Building C object CMakeFiles/cmTC_6e54a.dir/src.c.o
+        /usr/bin/cc -DHAVE_MATH_LIBRARY  -pthread  -fPIE -o CMakeFiles/cmTC_6e54a.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0PWrtS/src.c
+        Linking C executable cmTC_6e54a
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e54a.dir/link.txt --verbose=1
+        /usr/bin/ld: CMakeFiles/cmTC_6e54a.dir/src.c.o: in function `main':
+        src.c:(.text+0x33): undefined reference to `pow'
+        collect2: error: ld returned 1 exit status
+        /usr/bin/cc  -pthread  CMakeFiles/cmTC_6e54a.dir/src.c.o -o cmTC_6e54a
+        gmake[1]: *** [CMakeFiles/cmTC_6e54a.dir/build.make:102: cmTC_6e54a] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0PWrtS'
+        gmake: *** [Makefile:134: cmTC_6e54a/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "cmake/deps.cmake:131 (check_include_files)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Looking for include file GLUT/glut.h"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-RD0kqI"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-RD0kqI"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GLUT_GLUT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-RD0kqI'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_352e2/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_352e2.dir/build.make CMakeFiles/cmTC_352e2.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-RD0kqI'
+        Building C object CMakeFiles/cmTC_352e2.dir/HAVE_GLUT_GLUT_H.c.o
+        /usr/bin/cc   -pthread  -fPIE -o CMakeFiles/cmTC_352e2.dir/HAVE_GLUT_GLUT_H.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-RD0kqI/HAVE_GLUT_GLUT_H.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-RD0kqI/HAVE_GLUT_GLUT_H.c:2:10: fatal error: GLUT/glut.h: No such file or directory
+            2 | #include <GLUT/glut.h>
+              |          ^~~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_352e2.dir/build.make:81: CMakeFiles/cmTC_352e2.dir/HAVE_GLUT_GLUT_H.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-RD0kqI'
+        gmake: *** [Makefile:134: cmTC_352e2/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "cmake/deps.cmake:132 (check_include_files)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Looking for include file GL/glut.h"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-ZzNSMD"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-ZzNSMD"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_GL_GLUT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-ZzNSMD'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_c1ae8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_c1ae8.dir/build.make CMakeFiles/cmTC_c1ae8.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-ZzNSMD'
+        Building C object CMakeFiles/cmTC_c1ae8.dir/HAVE_GL_GLUT_H.c.o
+        /usr/bin/cc   -pthread  -fPIE -o CMakeFiles/cmTC_c1ae8.dir/HAVE_GL_GLUT_H.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-ZzNSMD/HAVE_GL_GLUT_H.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-ZzNSMD/HAVE_GL_GLUT_H.c:2:10: fatal error: GL/glut.h: No such file or directory
+            2 | #include <GL/glut.h>
+              |          ^~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_c1ae8.dir/build.make:81: CMakeFiles/cmTC_c1ae8.dir/HAVE_GL_GLUT_H.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-ZzNSMD'
+        gmake: *** [Makefile:134: cmTC_c1ae8/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "cmake/deps.cmake:133 (check_include_files)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Looking for include file OpenGL/glut.h"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-OPbvMF"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-OPbvMF"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_OPENGL_GLUT_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-OPbvMF'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9121d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9121d.dir/build.make CMakeFiles/cmTC_9121d.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-OPbvMF'
+        Building C object CMakeFiles/cmTC_9121d.dir/HAVE_OPENGL_GLUT_H.c.o
+        /usr/bin/cc   -pthread  -fPIE -o CMakeFiles/cmTC_9121d.dir/HAVE_OPENGL_GLUT_H.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-OPbvMF/HAVE_OPENGL_GLUT_H.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-OPbvMF/HAVE_OPENGL_GLUT_H.c:2:10: fatal error: OpenGL/glut.h: No such file or directory
+            2 | #include <OpenGL/glut.h>
+              |          ^~~~~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_9121d.dir/build.make:81: CMakeFiles/cmTC_9121d.dir/HAVE_OPENGL_GLUT_H.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-OPbvMF'
+        gmake: *** [Makefile:134: cmTC_9121d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "cmake/deps.cmake:134 (check_include_files)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Looking for include file shlwapi.h"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-6buvr0"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-6buvr0"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_SHLWAPI_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-6buvr0'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_e34ac/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_e34ac.dir/build.make CMakeFiles/cmTC_e34ac.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-6buvr0'
+        Building C object CMakeFiles/cmTC_e34ac.dir/HAVE_SHLWAPI_H.c.o
+        /usr/bin/cc   -pthread  -fPIE -o CMakeFiles/cmTC_e34ac.dir/HAVE_SHLWAPI_H.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-6buvr0/HAVE_SHLWAPI_H.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-6buvr0/HAVE_SHLWAPI_H.c:2:10: fatal error: shlwapi.h: No such file or directory
+            2 | #include <shlwapi.h>
+              |          ^~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_e34ac.dir/build.make:81: CMakeFiles/cmTC_e34ac.dir/HAVE_SHLWAPI_H.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-6buvr0'
+        gmake: *** [Makefile:134: cmTC_e34ac/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "cmake/deps.cmake:135 (check_include_files)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Looking for include file unistd.h"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8RQF23"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8RQF23"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8RQF23'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_ae177/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_ae177.dir/build.make CMakeFiles/cmTC_ae177.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8RQF23'
+        Building C object CMakeFiles/cmTC_ae177.dir/HAVE_UNISTD_H.c.o
+        /usr/bin/cc   -pthread  -fPIE -o CMakeFiles/cmTC_ae177.dir/HAVE_UNISTD_H.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8RQF23/HAVE_UNISTD_H.c
+        Linking C executable cmTC_ae177
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae177.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread  CMakeFiles/cmTC_ae177.dir/HAVE_UNISTD_H.c.o -o cmTC_ae177
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8RQF23'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "cmake/deps.cmake:136 (check_include_files)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Looking for include file wincodec.h"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oqWW1j"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oqWW1j"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_WINCODEC_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oqWW1j'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_700ff/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_700ff.dir/build.make CMakeFiles/cmTC_700ff.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oqWW1j'
+        Building C object CMakeFiles/cmTC_700ff.dir/HAVE_WINCODEC_H.c.o
+        /usr/bin/cc   -pthread  -fPIE -o CMakeFiles/cmTC_700ff.dir/HAVE_WINCODEC_H.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oqWW1j/HAVE_WINCODEC_H.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oqWW1j/HAVE_WINCODEC_H.c:2:10: fatal error: wincodec.h: No such file or directory
+            2 | #include <wincodec.h>
+              |          ^~~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_700ff.dir/build.make:81: CMakeFiles/cmTC_700ff.dir/HAVE_WINCODEC_H.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-oqWW1j'
+        gmake: *** [Makefile:134: cmTC_700ff/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/CheckIncludeFiles.cmake:141 (try_compile)"
+      - "cmake/deps.cmake:137 (check_include_files)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Looking for include file windows.h"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-xalPev"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-xalPev"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAVE_WINDOWS_H"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-xalPev'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_773ca/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_773ca.dir/build.make CMakeFiles/cmTC_773ca.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-xalPev'
+        Building C object CMakeFiles/cmTC_773ca.dir/HAVE_WINDOWS_H.c.o
+        /usr/bin/cc   -pthread  -fPIE -o CMakeFiles/cmTC_773ca.dir/HAVE_WINDOWS_H.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-xalPev/HAVE_WINDOWS_H.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-xalPev/HAVE_WINDOWS_H.c:2:10: fatal error: windows.h: No such file or directory
+            2 | #include <windows.h>
+              |          ^~~~~~~~~~~
+        compilation terminated.
+        gmake[1]: *** [CMakeFiles/cmTC_773ca.dir/build.make:81: CMakeFiles/cmTC_773ca.dir/HAVE_WINDOWS_H.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-xalPev'
+        gmake: *** [Makefile:134: cmTC_773ca/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_SSE41"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_SSE41"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_a17ef/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_a17ef.dir/build.make CMakeFiles/cmTC_a17ef.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh'
+        Building C object CMakeFiles/cmTC_a17ef.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_SSE41 -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread  -fPIE -o CMakeFiles/cmTC_a17ef.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh/src.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh/src.c: In function ‘main’:
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh/src.c:5:9: error: unknown type name ‘this’
+            5 |         this is not valid code
+              |         ^~~~
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh/src.c:5:17: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘not’
+            5 |         this is not valid code
+              |                 ^~~
+        gmake[1]: *** [CMakeFiles/cmTC_a17ef.dir/build.make:81: CMakeFiles/cmTC_a17ef.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7dDRxh'
+        gmake: *** [Makefile:134: cmTC_a17ef/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_SSE41"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-kuYYWk"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-kuYYWk"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_SSE41"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-kuYYWk'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9f06a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9f06a.dir/build.make CMakeFiles/cmTC_9f06a.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-kuYYWk'
+        Building C object CMakeFiles/cmTC_9f06a.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_SSE41 -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread -msse4.1 -fPIE -o CMakeFiles/cmTC_9f06a.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-kuYYWk/src.c
+        Linking C executable cmTC_9f06a
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f06a.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread -msse4.1 CMakeFiles/cmTC_9f06a.dir/src.c.o -o cmTC_9f06a
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-kuYYWk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_SSE2"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-cHKQ4J"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-cHKQ4J"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_SSE2"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-cHKQ4J'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_00cc8/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_00cc8.dir/build.make CMakeFiles/cmTC_00cc8.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-cHKQ4J'
+        Building C object CMakeFiles/cmTC_00cc8.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_SSE2 -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread  -fPIE -o CMakeFiles/cmTC_00cc8.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-cHKQ4J/src.c
+        Linking C executable cmTC_00cc8
+        /usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_00cc8.dir/link.txt --verbose=1
+        /usr/bin/cc  -pthread  CMakeFiles/cmTC_00cc8.dir/src.c.o -o cmTC_00cc8
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-cHKQ4J'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MIPS32"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MIPS32"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_9a1dc/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_9a1dc.dir/build.make CMakeFiles/cmTC_9a1dc.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw'
+        Building C object CMakeFiles/cmTC_9a1dc.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_MIPS32 -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread  -fPIE -o CMakeFiles/cmTC_9a1dc.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw/src.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw/src.c: In function ‘main’:
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw/src.c:5:9: error: unknown type name ‘this’
+            5 |         this is not valid code
+              |         ^~~~
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw/src.c:5:17: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘not’
+            5 |         this is not valid code
+              |                 ^~~
+        gmake[1]: *** [CMakeFiles/cmTC_9a1dc.dir/build.make:81: CMakeFiles/cmTC_9a1dc.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-Do2jvw'
+        gmake: *** [Makefile:134: cmTC_9a1dc/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MIPS32"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0Znq0j"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0Znq0j"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MIPS32"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0Znq0j'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0bf4f/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0bf4f.dir/build.make CMakeFiles/cmTC_0bf4f.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0Znq0j'
+        Building C object CMakeFiles/cmTC_0bf4f.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_MIPS32 -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread -mips32 -fPIE -o CMakeFiles/cmTC_0bf4f.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0Znq0j/src.c
+        cc: error: unrecognized command-line option ‘-mips32’; did you mean ‘-mpc32’?
+        gmake[1]: *** [CMakeFiles/cmTC_0bf4f.dir/build.make:81: CMakeFiles/cmTC_0bf4f.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-0Znq0j'
+        gmake: *** [Makefile:134: cmTC_0bf4f/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MIPS_DSP_R2"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MIPS_DSP_R2"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_095ff/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_095ff.dir/build.make CMakeFiles/cmTC_095ff.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs'
+        Building C object CMakeFiles/cmTC_095ff.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_MIPS_DSP_R2 -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread  -fPIE -o CMakeFiles/cmTC_095ff.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs/src.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs/src.c: In function ‘main’:
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs/src.c:5:9: error: unknown type name ‘this’
+            5 |         this is not valid code
+              |         ^~~~
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs/src.c:5:17: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘not’
+            5 |         this is not valid code
+              |                 ^~~
+        gmake[1]: *** [CMakeFiles/cmTC_095ff.dir/build.make:81: CMakeFiles/cmTC_095ff.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-bzxUVs'
+        gmake: *** [Makefile:134: cmTC_095ff/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MIPS_DSP_R2"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-S44jA5"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-S44jA5"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MIPS_DSP_R2"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-S44jA5'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_0775a/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_0775a.dir/build.make CMakeFiles/cmTC_0775a.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-S44jA5'
+        Building C object CMakeFiles/cmTC_0775a.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_MIPS_DSP_R2 -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread -mdspr2 -fPIE -o CMakeFiles/cmTC_0775a.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-S44jA5/src.c
+        cc: error: unrecognized command-line option ‘-mdspr2’
+        gmake[1]: *** [CMakeFiles/cmTC_0775a.dir/build.make:81: CMakeFiles/cmTC_0775a.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-S44jA5'
+        gmake: *** [Makefile:134: cmTC_0775a/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "cmake/cpu.cmake:135 (check_c_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test HAS_COMPILE_FLAG"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-tEoh5E"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-tEoh5E"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAS_COMPILE_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-tEoh5E'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f5bcf/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f5bcf.dir/build.make CMakeFiles/cmTC_f5bcf.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-tEoh5E'
+        Building C object CMakeFiles/cmTC_f5bcf.dir/src.c.o
+        /usr/bin/cc -DHAS_COMPILE_FLAG  -pthread -mdspr2 -fPIE   -mno-dspr2 -o CMakeFiles/cmTC_f5bcf.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-tEoh5E/src.c
+        cc: error: unrecognized command-line option '-mdspr2'
+        cc: error: unrecognized command-line option '-mno-dspr2'; did you mean '-mno-sse2'?
+        gmake[1]: *** [CMakeFiles/cmTC_f5bcf.dir/build.make:81: CMakeFiles/cmTC_f5bcf.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-tEoh5E'
+        gmake: *** [Makefile:134: cmTC_f5bcf/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_NEON"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_NEON"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_81138/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_81138.dir/build.make CMakeFiles/cmTC_81138.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ'
+        Building C object CMakeFiles/cmTC_81138.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_NEON -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread  -fPIE -o CMakeFiles/cmTC_81138.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ/src.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ/src.c: In function ‘main’:
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ/src.c:5:9: error: unknown type name ‘this’
+            5 |         this is not valid code
+              |         ^~~~
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ/src.c:5:17: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘not’
+            5 |         this is not valid code
+              |                 ^~~
+        gmake[1]: *** [CMakeFiles/cmTC_81138.dir/build.make:81: CMakeFiles/cmTC_81138.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-8lRGJZ'
+        gmake: *** [Makefile:134: cmTC_81138/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_NEON"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-1gMQC1"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-1gMQC1"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_NEON"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-1gMQC1'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_dd64b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_dd64b.dir/build.make CMakeFiles/cmTC_dd64b.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-1gMQC1'
+        Building C object CMakeFiles/cmTC_dd64b.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_NEON -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread -mfpu=neon -fPIE -o CMakeFiles/cmTC_dd64b.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-1gMQC1/src.c
+        cc: error: unrecognized command-line option ‘-mfpu=neon’
+        gmake[1]: *** [CMakeFiles/cmTC_dd64b.dir/build.make:81: CMakeFiles/cmTC_dd64b.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-1gMQC1'
+        gmake: *** [Makefile:134: cmTC_dd64b/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:90 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MSA"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MSA"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_760d4/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_760d4.dir/build.make CMakeFiles/cmTC_760d4.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE'
+        Building C object CMakeFiles/cmTC_760d4.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_MSA -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread  -fPIE -o CMakeFiles/cmTC_760d4.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE/src.c
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE/src.c: In function ‘main’:
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE/src.c:5:9: error: unknown type name ‘this’
+            5 |         this is not valid code
+              |         ^~~~
+        /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE/src.c:5:17: error: expected ‘=’, ‘,’, ‘;’, ‘asm’ or ‘__attribute__’ before ‘not’
+            5 |         this is not valid code
+              |                 ^~~
+        gmake[1]: *** [CMakeFiles/cmTC_760d4.dir/build.make:81: CMakeFiles/cmTC_760d4.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-m2RhKE'
+        gmake: *** [Makefile:134: cmTC_760d4/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "cmake/cpu.cmake:21 (check_c_source_compiles)"
+      - "cmake/cpu.cmake:97 (webp_check_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test WEBP_HAVE_FLAG_MSA"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-13XEay"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-13XEay"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "WEBP_HAVE_FLAG_MSA"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-13XEay'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_8bb44/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_8bb44.dir/build.make CMakeFiles/cmTC_8bb44.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-13XEay'
+        Building C object CMakeFiles/cmTC_8bb44.dir/src.c.o
+        /usr/bin/cc -DWEBP_HAVE_FLAG_MSA -I/home/runner/work/voidImageViewer/voidImageViewer/libwebp -pthread -mmsa -fPIE -o CMakeFiles/cmTC_8bb44.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-13XEay/src.c
+        cc: error: unrecognized command-line option ‘-mmsa’
+        gmake[1]: *** [CMakeFiles/cmTC_8bb44.dir/build.make:81: CMakeFiles/cmTC_8bb44.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-13XEay'
+        gmake: *** [Makefile:134: cmTC_8bb44/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/local/share/cmake-3.31/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/usr/local/share/cmake-3.31/Modules/CheckCCompilerFlag.cmake:56 (cmake_check_compiler_flag)"
+      - "cmake/cpu.cmake:135 (check_c_compiler_flag)"
+      - "cmake/deps.cmake:145 (include)"
+      - "CMakeLists.txt:114 (include)"
+    checks:
+      - "Performing Test HAS_COMPILE_FLAG"
+    directories:
+      source: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7TVVnf"
+      binary: "/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7TVVnf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: " -pthread"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "HAS_COMPILE_FLAG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7TVVnf'
+        
+        Run Build Command(s): /usr/local/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_24b2d/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_24b2d.dir/build.make CMakeFiles/cmTC_24b2d.dir/build
+        gmake[1]: Entering directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7TVVnf'
+        Building C object CMakeFiles/cmTC_24b2d.dir/src.c.o
+        /usr/bin/cc -DHAS_COMPILE_FLAG  -pthread -mmsa -fPIE   -mno-msa -o CMakeFiles/cmTC_24b2d.dir/src.c.o -c /home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7TVVnf/src.c
+        cc: error: unrecognized command-line option '-mmsa'
+        cc: error: unrecognized command-line option '-mno-msa'; did you mean '-Wno-hsa'?
+        gmake[1]: *** [CMakeFiles/cmTC_24b2d.dir/build.make:81: CMakeFiles/cmTC_24b2d.dir/src.c.o] Error 1
+        gmake[1]: Leaving directory '/home/runner/work/voidImageViewer/voidImageViewer/libwebp/build/CMakeFiles/CMakeScratch/TryCompile-7TVVnf'
+        gmake: *** [Makefile:134: cmTC_24b2d/fast] Error 2
+        
+      exitCode: 2
+...

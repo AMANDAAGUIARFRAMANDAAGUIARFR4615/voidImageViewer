@@ -1,0 +1,1 @@
+/usr/bin/cc  -pthread -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/webpmux.dir/link.d CMakeFiles/webpmux.dir/examples/webpmux.c.o -o webpmux  libexampleutil.a libimageioutil.a libwebpmux.a libwebp.a libsharpyuv.a -lm

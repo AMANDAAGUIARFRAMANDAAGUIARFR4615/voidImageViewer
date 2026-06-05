@@ -1,0 +1,50 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            cmake
+
+      # void Image Viewer is built with Visual Studio on Windows (vs2019/vs2026).
+      # The bundled libwebp dependency supports Unix builds via CMake
+      # (see libwebp/doc/building.md).
+      - name: Configure libwebp
+        working-directory: libwebp
+        run: |
+          cmake -B build \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DWEBP_BUILD_VWEBP=OFF
+
+      - name: Build libwebp
+        working-directory: libwebp
+        run: cmake --build build --parallel
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer-libwebp
+          if-no-files-found: error
+          path: |
+            libwebp/build/libwebp.a
+            libwebp/build/libwebpdecoder.a
+            libwebp/build/libwebpdemux.a
+            libwebp/build/libwebpmux.a
+            libwebp/build/libsharpyuv.a
+            libwebp/build/cwebp
+            libwebp/build/dwebp
+            libwebp/build/webpmux
+            libwebp/build/webpinfo

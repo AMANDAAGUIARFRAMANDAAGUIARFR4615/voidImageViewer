@@ -1,0 +1,54 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: x64
+            artifact_name: voidImageViewer-Release-x64
+            artifact_path: vs2026/x64/Release/voidImageViewer.exe
+          - platform: Win32
+            artifact_name: voidImageViewer-Release-Win32
+            artifact_path: |
+              vs2026/Release/voidImageViewer.exe
+              vs2026/Win32/Release/voidImageViewer.exe
+          - platform: ARM64
+            artifact_name: voidImageViewer-Release-ARM64
+            artifact_path: vs2026/ARM64/Release/voidImageViewerARM64.exe
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Verify build toolchain
+        shell: pwsh
+        run: |
+          Write-Host "void Image Viewer uses vendored libwebp; no package manager dependencies."
+          msbuild -version
+
+      - name: Build Release (${{ matrix.platform }})
+        shell: pwsh
+        run: |
+          msbuild vs2026\voidImageViewer.sln `
+            /p:Configuration=Release `
+            /p:Platform=${{ matrix.platform }} `
+            /m `
+            /v:minimal
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.artifact_path }}
+          if-no-files-found: error

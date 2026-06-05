@@ -1,0 +1,35 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build Release (x64)
+        run: >
+          msbuild vs2019/voidImageViewer.sln
+          /p:Configuration=Release
+          /p:Platform=x64
+          /p:PlatformToolset=v143
+          /m
+          /verbosity:minimal
+
+      - name: Upload voidImageViewer (x64)
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer-Release-x64
+          path: vs2019/x64/Release/voidImageViewer.exe
+          if-no-files-found: error

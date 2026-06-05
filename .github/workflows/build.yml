@@ -1,0 +1,45 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: x64
+            artifact_name: voidImageViewer-x64
+            output_path: vs2019/x64/Release/voidImageViewer.exe
+          - platform: Win32
+            artifact_name: voidImageViewer-x86
+            output_path: vs2019/Release/voidImageViewer.exe
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build Release (${{ matrix.platform }})
+        run: >
+          msbuild vs2019\voidImageViewer.sln
+          /p:Configuration=Release
+          /p:Platform=${{ matrix.platform }}
+          /m
+          /v:minimal
+
+      - name: Upload ${{ matrix.artifact_name }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.output_path }}
+          if-no-files-found: error

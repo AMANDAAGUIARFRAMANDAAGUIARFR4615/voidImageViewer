@@ -1,0 +1,36 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Install dependencies
+        run: |
+          Write-Host "No external package dependencies."
+          Write-Host "libwebp is vendored; Windows SDK and MSVC are provided by the runner."
+
+      - name: Build Release x64
+        run: msbuild vs2019/voidImageViewer.sln /p:Configuration=Release /p:Platform=x64 /m
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer-x64-Release
+          path: |
+            vs2019/x64/Release/voidImageViewer.exe
+            vs2019/x64/Release/voidImageViewer.pdb
+          if-no-files-found: error

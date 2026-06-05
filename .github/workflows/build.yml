@@ -1,0 +1,45 @@
+name: Build
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: x64
+            artifact_name: voidImageViewer-x64-release
+            artifact_glob: artifacts/x64/*.exe
+          - platform: ARM64
+            artifact_name: voidImageViewer-arm64-release
+            artifact_glob: artifacts/ARM64/*ARM64*.exe
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Build Release (${{ matrix.platform }})
+        shell: pwsh
+        run: |
+          msbuild vs2026/voidImageViewer.sln `
+            /p:Configuration=Release `
+            /p:Platform=${{ matrix.platform }} `
+            /p:PlatformToolset=v143 `
+            /p:OutDir="${{ github.workspace }}/artifacts/${{ matrix.platform }}/" `
+            /m `
+            /verbosity:minimal
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.artifact_glob }}
+          if-no-files-found: error

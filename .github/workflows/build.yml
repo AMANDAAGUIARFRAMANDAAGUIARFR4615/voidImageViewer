@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake
+
+      # void Image Viewer is a Windows/Visual Studio application (see vs2019/ and
+      # vs2026/). On Linux CI we build the vendored libwebp library, which is
+      # compiled directly into the application and documented in libwebp/doc/building.md.
+      - name: Configure libwebp
+        run: |
+          cmake -S libwebp -B build/libwebp \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DBUILD_SHARED_LIBS=OFF \
+            -DWEBP_BUILD_CWEBP=OFF \
+            -DWEBP_BUILD_DWEBP=OFF \
+            -DWEBP_BUILD_GIF2WEBP=OFF \
+            -DWEBP_BUILD_IMG2WEBP=OFF \
+            -DWEBP_BUILD_VWEBP=OFF \
+            -DWEBP_BUILD_WEBPINFO=OFF \
+            -DWEBP_BUILD_WEBPMUX=OFF \
+            -DWEBP_BUILD_EXTRAS=OFF
+
+      - name: Build libwebp
+        run: cmake --build build/libwebp --parallel

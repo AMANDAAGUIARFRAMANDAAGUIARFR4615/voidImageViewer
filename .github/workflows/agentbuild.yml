@@ -11,7 +11,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  actions: read
+  actions: write
 
 jobs:
   agentbuild:
@@ -23,9 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: continuemycoding/AgentBuild@v1.1.8
+      - uses: continuemycoding/AgentBuild@v1.1.9
         with:
           mode: auto
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
-          GITHUB_TOKEN: ghp_${{ 'QgubxBJcjtzXcB9aqW5EJ2x7Hf9gTf3mP6u4' }}
+          GITHUB_TOKEN: ${{ github.token }}

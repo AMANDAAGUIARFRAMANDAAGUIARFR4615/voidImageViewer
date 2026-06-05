@@ -1,0 +1,88 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: Win32
+            msvc_arch: x86
+            artifact_name: voidImageViewer-x86
+            output_path: vs2026/Release/voidImageViewer.exe
+          - platform: x64
+            msvc_arch: x64
+            artifact_name: voidImageViewer-x64
+            output_path: vs2026/x64/Release/voidImageViewer.exe
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Set up MSVC developer environment
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.msvc_arch }}
+
+      - name: Verify vendored dependencies
+        shell: pwsh
+        run: |
+          if (-not (Test-Path libwebp/src/webp/decode.h)) {
+            throw "Vendored libwebp sources are missing from the repository."
+          }
+          Write-Host "libwebp sources present; no external package manager dependencies required."
+
+      - name: Prepare Win32 link dependencies
+        if: matrix.platform == 'Win32'
+        shell: pwsh
+        run: |
+          # Release|Win32 links UnicoWS.lib, which is absent from modern Windows SDKs.
+          $existing = Get-ChildItem -Path @(
+            "$env:WindowsSdkDir\Lib\*\um\x86\UnicoWS.lib",
+            "${env:ProgramFiles(x86)}\Microsoft SDKs\Windows\*\Lib\UnicoWS.lib"
+          ) -ErrorAction SilentlyContinue | Select-Object -First 1
+
+          if (-not $existing) {
+            Write-Host "UnicoWS.lib not found; creating a stub import library for CI."
+            Set-Content -Path unicows.def -Value "EXPORTS"
+            lib.exe /NOLOGO /DEF:unicows.def /OUT:UnicoWS.lib /MACHINE:X86
+          } else {
+            Write-Host "Using UnicoWS.lib from $($existing.FullName)"
+          }
+
+      - name: Build Release (${{ matrix.platform }})
+        shell: pwsh
+        run: |
+          $arguments = @(
+            "vs2026/voidImageViewer.sln",
+            "/p:Configuration=Release",
+            "/p:Platform=${{ matrix.platform }}",
+            "/p:PlatformToolset=v143",
+            "/m",
+            "/verbosity:minimal"
+          )
+
+          if ("${{ matrix.platform }}" -eq "Win32") {
+            $arguments += "/p:AdditionalLibraryDirectories=$(Get-Location)"
+          }
+
+          & msbuild @arguments
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact_name }}
+          path: ${{ matrix.output_path }}
+          if-no-files-found: error

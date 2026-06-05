@@ -1,0 +1,59 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: x64
+            arch: x64
+            artifact_dir: vs2019/x64/Release
+          - platform: Win32
+            arch: x86
+            artifact_dir: vs2019/Release
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure MSVC toolchain
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: ${{ matrix.arch }}
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Verify bundled dependencies
+        shell: pwsh
+        run: |
+          if (-not (Test-Path libwebp/src)) {
+            throw "Expected vendored libwebp sources at libwebp/src"
+          }
+          Write-Host "libwebp is bundled in-tree; no external package manager install is required."
+
+      - name: Build voidImageViewer (Release | ${{ matrix.platform }})
+        shell: pwsh
+        run: |
+          msbuild vs2019/voidImageViewer.sln `
+            /p:Configuration=Release `
+            /p:Platform=${{ matrix.platform }} `
+            /p:PlatformToolset=v143 `
+            /p:WindowsTargetPlatformVersion=10.0 `
+            /m
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: voidImageViewer-${{ matrix.platform }}-Release
+          path: ${{ matrix.artifact_dir }}/voidImageViewer*.exe
+          if-no-files-found: error
